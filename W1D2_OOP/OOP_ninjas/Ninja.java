@@ -4,12 +4,14 @@ public class Ninja {
     private String name;
     private String weapon;
     private Integer health;
+    private static int numberOfNinjasCreated = 0;
 
     // Constructor(s)
     public Ninja() {
         this.name = "anonymous";
         this.weapon = "katana";
         this.health = 150;
+        numberOfNinjasCreated++;
     }
 
     // overloading the Ninja constuctor
@@ -17,12 +19,19 @@ public class Ninja {
         this.name = someNinjaName;
         this.weapon = "katana";
         this.health = 150;
+        numberOfNinjasCreated++;
     }
 
     public Ninja(String someNinjaName, String weapon, Integer hp) {
         this.name = someNinjaName;
         this.weapon = weapon;
         this.health = hp;
+        numberOfNinjasCreated++;
+    }
+
+    // static method
+    public static int getNumberOfNunjas() {
+        return numberOfNinjasCreated;
     }
 
 

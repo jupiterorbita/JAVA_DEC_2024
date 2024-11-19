@@ -6,6 +6,8 @@ public class TestNinja{
         Ninja naruto = new Ninja();
         Ninja ninja1 = new Ninja("bob");
         Ninja ninja2 = new Ninja("Donatello", "staff", 200);
+        Ninja ninja3 = new Ninja("Donatello", "staff", 200);
+        Ninja ninja4 = new Ninja("Donatello", "staff", 200);
 
         // naruto.setWeapon("stick");
         // System.out.println(naruto.getWeapon());
@@ -18,5 +20,7 @@ public class TestNinja{
 
         ninja2.displayStats();
         System.out.println(ninja2);
+
+        System.out.println(Ninja.getNumberOfNunjas());
     }
 }
