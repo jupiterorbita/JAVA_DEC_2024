@@ -1,0 +1,21 @@
+// inside the POM.xml inside the <dependencies>
+
+<dependency>
+       <groupId>org.apache.tomcat.embed</groupId>
+       <artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+ <dependency>
+        <groupId>jakarta.servlet.jsp.jstl</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.glassfish.web</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    </dependency>
+
+// inside application.properties
+
+spring.mvc.view.prefix=/WEB-INF/
+
+// inside the .jsp file (html)
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
