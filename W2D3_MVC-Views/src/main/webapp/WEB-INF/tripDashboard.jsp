@@ -37,7 +37,7 @@
 					<td>${eachTrip.tripLength}</td>
 					<!-- NOT PART OF LECTURE -->
 					<td>
-						actions
+						<a href="/trips/${eachTrip.id}/edit">edit</a>
 						
 					</td>
 				</tr>

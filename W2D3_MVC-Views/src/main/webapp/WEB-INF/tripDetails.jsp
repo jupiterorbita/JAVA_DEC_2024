@@ -15,6 +15,12 @@
 	<p>
 		${oneTrip.owner } wants to go to <strong>${oneTrip.location }</strong> for ${oneTrip.tripLength} days!
 	</p>
+	
+	<form action="/trips/${oneTrip.id}/delete" method="post">
+	    <input type="hidden" name="_method" value="delete">
+	    <input type="submit" value="❌ Delete">
+	</form>
+	
 </div>
 </body>
 </html>

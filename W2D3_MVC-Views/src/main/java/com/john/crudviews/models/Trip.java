@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -30,6 +31,7 @@ public class Trip {
 
 	@NotNull
 	@Min(value = 1, message = "must be positive")
+	@Max(value = 365)
 	private Integer tripLength;
 
 	@NotNull
