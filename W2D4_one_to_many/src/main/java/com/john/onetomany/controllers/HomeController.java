@@ -1,11 +1,14 @@
 package com.john.onetomany.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.john.onetomany.models.Trip;
@@ -31,7 +34,11 @@ public class HomeController {
 
 //	GET /trips === DASHBOARD ===
 	@GetMapping("/trips")
-	public String desplayTripsDashboard() {
+	public String desplayTripsDashboard(
+			Model model) {
+		List<Trip> allTrips = tripService.allTrips();
+//		pass all the trips to the jsp
+		model.addAttribute("allTrips", allTrips);
 		return "tripDashboard.jsp";
 	}
 
@@ -56,6 +63,17 @@ public class HomeController {
 			userService.createUser(newUser);
 			return "redirect:/users/new"; // get
 		}
+	}
+	
+//	GET ONE USER (and everything about them)
+//	GET /users/3
+	@GetMapping("/users/{id}")
+	public String renderUserDetailsPage(
+			@PathVariable("id") Long id,
+			Model model) {
+		User thisOwner = userService.findUser(id);
+		model.addAttribute("thisOwner", thisOwner);
+		return "userDetails.jsp";
 	}
 
 //	============= TRIP ROUTES ================

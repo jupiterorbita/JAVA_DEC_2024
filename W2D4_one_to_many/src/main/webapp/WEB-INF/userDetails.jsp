@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Trips ✈️</title>
+    <title>a user</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -19,47 +19,14 @@
 </head>
 <body>
 <div class="container">
-	<h2>Trip Dashaboard</h2>
-	<a href="/users/new">ADD A USER 👤</a>
-	<a href="/trips/new">CREATE A TRIP ✈️</a>
+	<h2>hello ${thisOwner.username} wants to go to.... </h2>
+	<a href="/trips">back</a>
+	${thisOwner.ownedTrips }
 	
-	
-	<!-- ${allTrips } -->
-	
-	<table class="table">
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>location</th>
-				<th>length</th>
-				<th>owner</th>
-				<th>created trips</th>
-			</tr>
-		</thead>
-		
-		<tbody>
-			<c:forEach items="${allTrips }" var="eachTrip">
-				<tr>
-					<td>${eachTrip.id }</td>
-					<td>${eachTrip.location }</td>
-					<td>${eachTrip.tripLength} days</td>
-					<td>
-						<a href="/users/${eachTrip.owner.id}">
-						
-							${eachTrip.owner.username}
-						</a>
-					
-					</td>
-					<td>${eachTrip.owner.ownedTrips.size()}</td>
-				</tr>
-			</c:forEach>
-
-		</tbody>
-	
-	
-	</table>
-	
-	
+	<hr />
+	<c:forEach items="${thisOwner.ownedTrips }" var="oneTrip">
+		<li>${oneTrip.location } for ${oneTrip.tripLength } days</li>
+	</c:forEach>
 	
 	
 	
