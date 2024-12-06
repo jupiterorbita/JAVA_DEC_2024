@@ -23,6 +23,7 @@
 <body>
 	<div class="container">
 		<h1>Login - Registration</h1>
+		<p style="color:green">${goodbye }</p>
 		<hr />
 
 		<h2>Register</h2>
@@ -52,7 +53,20 @@
 		</form:form>
 
 
-
+		<h2>Login</h2>
+		<form:form action="/login" method="POST" modelAttribute="newLogin">
+			<div class="form-group">
+				<form:label path="email">email</form:label>
+				<form:input path="email" class="form-control" />
+				<form:errors path="email" class="text-danger" />
+			</div>
+			<div class="form-group">
+				<form:label path="password">password</form:label>
+				<form:input path="password" class="form-control" type="password" />
+				<form:errors path="password" class="text-danger" />
+			</div>
+			<input type="submit" class="btn btn-success" value="Login" />
+		</form:form>
 
 
 

@@ -20,6 +20,14 @@
 <body>
 <div class="container">
 	<h1>Hello ${userName} with id: ${userId } </h1>
+	<a href="/logout">logout</a>
+	
+	
+	
+	
+	
+	
+	
 </div>
 </body>
 </html>
