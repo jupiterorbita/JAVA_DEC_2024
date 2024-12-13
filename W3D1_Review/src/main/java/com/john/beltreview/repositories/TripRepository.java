@@ -18,6 +18,8 @@ public interface TripRepository extends CrudRepository<Trip, Long> {
     
     List<Trip> findAllByOrderByLikersDesc();
     List<Trip> findTop3ByOrderByLikersDesc();
+    
+    List<Trip> findByLocationContaining(String n);
 
 
 }

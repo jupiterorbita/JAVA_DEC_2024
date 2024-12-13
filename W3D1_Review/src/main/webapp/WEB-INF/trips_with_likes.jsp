@@ -25,12 +25,12 @@
 	<c:forEach items="${tripsWithLikes }" var="trip">
 		<li>${trip.location } liked by 
 		
-			<c:forEach items="${trip.likers}" var="liker" varStatus="status">
+			<c:forEach items="${trip.likers}" var="liker" varStatus="x">
 			
 			<a href="/tripsUserLiked/${liker.id }">
 				${liker.userName}
 			</a>
-				<c:if test="${!status.last}">
+				<c:if test="${!x.last}">
 				,
             	</c:if>
 			</c:forEach>
